@@ -35,51 +35,50 @@ Jam berapa Andi dan Raya melakukan chatting waktu lokal rumah Raya?
 Apakah masih ada waktu untuk Andi memiliki waktu luang? Jam berapakah?
 Jika Andi tidak memiliki tugas sekolah, berapakah waktu luang yang Andi miliki?
 */
-    $jam = "15:45";
-    if ($jam =="15:30") {
-        echo "<br/> $jam Pulang Sekolah"; 
-    } else if($jam == "15:45") {
-        echo "<br/> $jam : Tiba di Rumah";
-    } else if ($jam >=date("15:45") && $jam <=date("16:10")) {
-        echo "<br/> $jam : Mandi";
-    } else if ($jam >=date("16:11") && $jam <=date("16:40")) {
-        echo "<br/> $jam : Mengaji";
-    } else if ($jam >=date("16:41") && $jam <=date("17:10")) {
-        echo "<br/> $jam : Menghafalkan Dialog Festival Kesenian Budaya";
-    } else if ($jam >=date("17:11") && $jam <=date("17:40")) {
-        echo "<br/> $jam : Membeli Bumbu Masakan";
-    } else if ($jam >=date("17:41") && $jam <=date("18:10")) {
-        echo "<br/> $jam : Chattingan";
-    } else if ($jam >=date("18:11") && $jam <=date("18:35")) {
-        echo "<br/> $jam : Sholat Magrib";
-    } else if ($jam >=date("18:36") && $jam <=date("19:05")) {
-        echo "<br/> $jam : Makan Malam";
-    } else if ($jam >=date("19:06") && $jam <=date("19:30")) {
-        echo "<br/> $jam : Sholat Isya";
-    } else if ($jam >=date("19:31") && $jam <=date("21:30")) {
-        echo "<br/> $jam : Tugas Sekolah";
-    } else if ($jam >=date("21:31") && $jam <=date("22:00")) {
-        echo "<br/> $jam : Mengobrol Bersama Keluarga";
-    } else if ($jam ==date("04:00")) {
-        echo "<br/> $jam : Bangun Tidur";
-    } else if ($jam >=date("22:01") || $jam <=date("04:00")) {
-        echo "<br/> $jam : Tidur";
-    }
-    else
-    {
-       echo "<br/> $jam : tidak ada kegiatan";
-    }
+$jam = "15:30";
 
-    /*Sebelumnya: if ($jam >= "23:00" && $jam > "04:00") (salah, karena jam tidak bisa lebih dari 23:00 dan lebih dari 04:00 sekaligus).
-     Sekarang: if ($jam >= "23:00" || $jam <= "04:00") (benar, karena jam bisa lebih dari 23:00 atau lebih kecil dari 04:00). */
+if($jam == "15:30") {
+    echo "<br/> $jam Pulang Sekolah"; 
+} else if($jam == "15:45") {
+    echo "<br/> $jam Sampai di Rumah";
+} else if($jam >=date("15:45") && $jam < "16:10") {
+    echo "<br/> $jam Mandi"; 
+} else if($jam >= "16:10" && $jam < "16:40") {
+    echo "<br/> $jam Mengaji"; 
+} else if($jam >= "16:40" && $jam < "17:10") {
+    echo "<br/> Menghafalkan dialog festival kesenian budaya";
+} else if($jam >= "17:10" && $jam < "17:40") {
+    echo "<br/> $jam Beli bumbu";
+} else if($jam >= "17:40" && $jam < "18:10") {
+    echo "<br/> $jam Chattingan";
+} else if($jam >= "18:10" && $jam < "18:35") {
+    echo "<br/> $jam Sholat Magrib";
+} else if($jam >= "18:35" && $jam < "19:05") {
+    echo "<br/> $jam Makan malam";
+} else if($jam >= "19:05" && $jam < "19:30") {
+    echo "<br/> $jam Sholat Isya";
+} else if($jam >= "19:30" && $jam < "21:30") {
+    echo "<br/> $jam Mengerjakan tugas";
+} else if($jam >= "21:30" && $jam < "22:00") {
+    echo "<br/> $jam Ngobrol dengan keluarga";
+} else if ($jam == date("04:00")) {
+    echo "<br/> $jam Bangun Tidur";
+} else if($jam >= "22:00" || $jam < "04:00") {
+    echo "<br/> $jam Tidur";
+}
+else
+{
+    echo "<br/> dunia laen";
+}
 
-     /* jawaban bahan diskusi :
-     1. Agar jadwal Andi tidak bertumpuk/terlewatkan, maka kita memastikan semua kegiatan Andi memiliki rentang waktu yang jelas
-     2. Urutan kegiatan Andi yang kami buat berdasarkan logika keseharian dan prioritas aktivitas
-     3. Jika Andi chatting pukul 17:40 WIB, maka Raya chattingan dengan Andi pukul 13:40 WAS. Perbedaan waktu antara WIB dan WAS adlah 4 jam, 4jam lebih cepat di Indonesia di banding Arab
-     4. Saat ini tidak ada waktu luang yang signifikan dalam jadwal Andi karena semua waktu sudah terisi dengan kegiatan. Jika ada waktu luang, ketika Andi tidak ada tugas sekolah
-     5. Jika tidak ada tugas sekolah, maka Andi memiliki wakru luang 2 jam 
-      */
+?> 
+
+<?php
+echo "<p>1. Apa yang perlu diperhatikan saat menentukan jadwal Andi, sehingga tidak ada jadwal yang bertumbuk atau terlewatkan? </br> => Agar jadwal Andi tidak bertabrakan/terlewatkan, maka kita memastikan semua kegiatan Andi memiliki rentang waktu yang jelas.</br></p>";
+echo "<p>2. Jelaskan alasanmu dalam menentukan urutan kegiatan tersebut! </br> => Urutan kegiatan Andi yang kami buat berdasarkan logika keseharian dan prioritas aktifitas.</br></p>";
+echo "<p>3. Jam berapa Andi dan Raya melakukan chatting waktu lokal rumah Raya? </br> => Jika Andi chatting pukul 17:40 WIB, maka Raya chattingan dengan Andi pukul 13:40 WAS. Perbedaan waktu antara WIB dan WAS adalah 4 jam, 4 jam lebih cepat di Indonesia dibanding Arab.</br></p>";
+echo "<p>4. Apakah masih ada waktu untuk Andi memiliki waktu luang? Jam berapakah? </br> => Saat ini tidak ada waktu luang yang signifikan dalam jadwal Andi karena semua waktu sudah terisi dengan kegiatan. Jika ada waktu luang, ketika Andi tidak ada tugas sekolah.</br></p>";
+echo "<p>5. Jika Andi tidak memiliki tugas sekolah, berapakah waktu luang yang Andi miliki? </br> => Jika tidak ada tugas sekolah, maka Andi akan memiliki waktu luang 2 jam.</br></p>";
 
      ?>
     </body>
